@@ -1,0 +1,32 @@
+{
+  "titre_recherche": "Développeur web, développeur, ingénieur logiciel (C++, Web & 3D)",
+  "competences_clefs": [
+    "C++",
+    "3D Graphics & WebGL (Three.js, React Three Fiber, Babylon.js, Unity)",
+    "Front-End Web (React, TypeScript, JavaScript, Vite, SASS/SCSS, HTML5, CSS3)",
+    "Back-End & Outillage (Node.js, Express, Git, GitHub, GitLab, Linux, Visual studio Code)"
+  ],
+  "technologies_exclues": [
+    "Java",
+    "J2EE",
+    "Spring",
+    "Spring Boot",
+    "C#",
+    ".NET",
+    "Dotnet",
+    "ASP.NET",
+    "PHP",
+    "Symfony",
+    "Laravel",
+    "Cobol"
+  ],
+  "experiences": [
+    "4 ans d'expérience en ingénieur Logiciel / Développeur C++ & Web Javascript / Typescript UI",
+    "Développement VR / 3D temps réel (Unity 3D, Three.js, React Three Fiber, Babylon.js)",
+    "Développement Full-Stack"
+  ],
+  "preferences": {
+    "localisation_preferee": ["Paris", "75", "Hauts-de-Seine", "92", "Île-de-France", "Télétravail"],
+    "type_contrat": ["CDI"]
+  }
+}

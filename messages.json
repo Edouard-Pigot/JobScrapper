@@ -1,0 +1,15 @@
+{
+  "logs": {
+    "processing_count": "🔍 Traitement de {count} offre(s) active(s)...",
+    "summary_title": "\n📊 **Bilan du tri rapide :**",
+    "summary_location": "   📍 Rejets par LIEU : {rejected_loc}",
+    "summary_terms": "   🚫 Rejets par MOTS-CLÉS EXCLUS : {rejected_terms}",
+    "summary_total": "   ✅ Total écarté : {total} offre(s).",
+    "error_config": "❌ Erreur de chargement du fichier de configuration : {error}"
+  },
+  "rejection_reasons": {
+    "location": "Localisation hors zone ({location})",
+    "term": "Terme exclu trouvé ({term})",
+    "explanation": "Offre rejetée automatiquement : {reason}."
+  }
+}

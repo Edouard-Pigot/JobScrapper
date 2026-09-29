@@ -1,0 +1,47 @@
+{
+  "database": {
+    "db_name": "jobs.db"
+  },
+  "ollama": {
+    "model_name": "gemma4",
+    "temperature": 0.1,
+    "repeat_penalty": 1.2
+  },
+  "profile": {
+    "intitule_poste": "Secrétaire / Assistante Administrative",
+    "competences_recherchees": "Accueil, Gestion de courrier, Saisie de données, Excel, Organisation"
+  },
+  "filtering": {
+    "allowed_locations": [
+      "Paris",
+      "75",
+      "Hauts-de-Seine",
+      "92",
+      "Île-de-France",
+      "Ile-de-France",
+      "Aix",
+      "Aix-en-Provence",
+      "Marseille",
+      "13",
+      "Bouches-du-Rhône",
+      "Télétravail",
+      "Remote"
+    ],
+    "excluded_terms": [
+      "Java",
+      "Spring",
+      "SpringBoot",
+      "C#",
+      ".NET",
+      "ASP.NET",
+      "PHP",
+      "Symfony",
+      "Laravel",
+      "Cobol"
+    ]
+  },
+  "prompt_templates": {
+    "evaluation_prompt": "Tu es un assistant RH expert chargé de sélectionner les meilleures offres d'emploi pour un candidat.\nÉvalue la correspondance entre le profil du candidat et l'offre d'emploi ci-dessous.\n\nPROFIL CANDIDAT :\n- Intitulé du poste recherché : {intitule_poste}\n- Compétences / Expériences clés : {competences_recherchees}\n- TERMES / CRITÈRES STRICTEMENT EXCLUS : {excluded_terms}\n\nOFFRE D'EMPLOI :\n- Titre du poste : {title}\n- Entreprise : {company}\n- Localisation : {location}\n- Description :\n{clean_description}\n\nCONSIGNES STRICTES :\n1. Si l'offre contient un critère ou terme strictement exclu par le candidat, attribue un score de 0.\n2. Évalue la pertinence globale globale de l'offre par rapport au profil (0 = aucun rapport, 100 = poste idéal).\n3. Extrais une liste de 3 à 6 compétences, outils, qualifications ou mots-clés essentiels demandés dans l'offre.\n\nRéponds EXCLUSIVEMENT sous la forme d'un objet JSON valide structuré comme suit :\n{{\n  \"score\": <nombre entre 0 et 100>,\n  \"competences_cles\": [\"<Compétence/Outil 1>\", \"<Compétence/Outil 2>\", \"<Compétence/Outil 3>\"],\n  \"explication\": \"<résumé synthétique de la pertinence en 2 phrases>\",\n  \"points_forts\": [\"<point fort 1>\", \"<point fort 2>\"],\n  \"points_faibles\": [\"<point faible ou attention 1>\", \"<point faible ou attention 2>\"]\n}}"
+  }
+}
+//"evaluation_prompt": "Tu es un assistant RH ultra-sélectionneur pour un développeur C++ / Web / 3D.\nÉvalue la correspondance entre le profil du candidat et l'offre ci-dessous et extrais les langages/technologies clés demandés.\n\nPROFIL CANDIDAT :\n- Titre : {titre_recherche}\n- Compétences clés : {competences_clefs}\n- Technologies STRICTEMENT EXCLUES : {technologies_exclues}\n\nOFFRE D'EMPLOI :\n- Titre : {title}\n- Entreprise : {company}\n- Localisation : {location}\n- Description :\n{clean_description}\n\nCONSIGNES STRICTES :\n1. Si l'offre requiert principalement une techno exclue, met le score à 0.\n2. N'attribue un score > 70 que si le cœur du poste concerne le C++, le Web (React, TS...) ou la 3D/WebGL/Cartographie.\n3. Extrais une liste de 3 à 6 mots-clés/tags représentant les langages, frameworks et outils principaux demandés.\n\nRéponds EXCLUSIVEMENT sous la forme d'un objet JSON valide structuré comme suit :\n{{\n  \"score\": <nombre entre 0 et 100>,\n  \"tags\": [\"<Techno1>\", \"<Techno2>\", \"<Techno3>\"],\n  \"explication\": \"<résumé synthétique en 2 phrases>\",\n  \"points_forts\": [\"<point 1>\", \"<point 2>\"],\n  \"points_faibles\": [\"<point 1>\", \"<point 2>\"]\n}}"
